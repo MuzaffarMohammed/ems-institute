@@ -1,6 +1,7 @@
 spring:
   application: 
     name: EMS-INSTITUTE
+
   datasource:
     url: jdbc:mysql://localhost:3306/ems_institute
     username: root
@@ -10,16 +11,16 @@ spring:
     database-platform: org.hibernate.dialect.MySQL5InnoDBDialect
     hibernate:
       ddl-auto: validate
-  profiles:
-    active: dev 
-
-server:  port: 4002
-
+server:
+  port: ${PORT:4002}
+  
 eureka:
   instance:
-    hostname: localhost
+    hostname: ${EUREKA.INSTANCE.ADDRESS:localhost}
+    port: ${PORT:4340}
+    http-protocol: ${EUREKA.INSTANCE.HTTP.PROTOCOL:http}
   client:
     register-with-eureka: true
     fetch-registry: true
     serviceUrl:
-      defaultZone: http://${eureka.instance.hostname}:4340/eureka/          
+      defaultZone: ${eureka.instance.http-protocol}://${eureka.instance.hostname}:${eureka.instance.port}/eureka/        

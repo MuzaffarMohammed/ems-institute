@@ -9,6 +9,6 @@ import com.appseonit.ems.institute.entity.EmsInstitutePK;
 @Repository
 public interface InstituteJPARepository extends JpaRepository<EmsInstitute, EmsInstitutePK>{
 	
-	EmsInstitute findOneByEmsInstitutePKInstituteId(Integer instituteId);
+	//EmsInstitute findOneByEmsInstitutePKInstituteId(Integer instituteId);
 
 }

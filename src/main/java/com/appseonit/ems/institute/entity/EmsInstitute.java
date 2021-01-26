@@ -6,11 +6,11 @@ import java.util.Date;
 
 
 /**
- * The persistent class for the ems_client database table.
+ * The persistent class for the ems_institute database table.
  * 
  */
 @Entity
-@Table(name="ems_client")
+@Table(name="ems_institute")
 public class EmsInstitute implements Serializable {
 	private static final long serialVersionUID = 1L;
 
@@ -18,42 +18,51 @@ public class EmsInstitute implements Serializable {
 	private EmsInstitutePK id;
 
 	@Temporal(TemporalType.DATE)
-	@Column(name="ACADEMIC_YEAR_FROM")
+	@Column(name="ACADEMIC_YEAR_FROM", nullable = false)
 	private Date academicYearFrom;
 
 	@Temporal(TemporalType.DATE)
-	@Column(name="ACADEMIC_YEAR_TO")
+	@Column(name="ACADEMIC_YEAR_TO", nullable = false)
 	private Date academicYearTo;
 
+	@Column(name="CITY", nullable = false)
 	private String city;
 
-	@Column(name="CONTACT_NO")
+	@Column(name="CONTACT_NO", nullable = false)
 	private String contactNo;
 
+	@Column(name="COUNTRY", nullable = false)
 	private String country;
 
-	@Column(name="FULL_ADDRESS")
+	@Column(name="FULL_ADDRESS", nullable = false)
 	private String fullAddress;
 
+	@Column(name="LOCALITY", nullable = false)
 	private String locality;
 
-	@Column(name="MAIL_ID")
+	@Column(name="MAIL_ID", nullable = false)
 	private String mailId;
 
+	@Column(name="MEDIUM", nullable = false)
 	private String medium;
 
-	@Column(name="OFFICE_PHONE_NO")
+	@Column(name="OFFICE_PHONE_NO", nullable = false)
 	private String officePhoneNo;
 
-	@Column(name="PIN_CODE")
+	@Column(name="PIN_CODE", nullable = false)
 	private String pinCode;
 
-	@Column(name="RECOGNISED_BY")
+	@Column(name="RECOGNISED_BY", nullable = false)
 	private String recognisedBy;
 
+	@Column(name="STATE", nullable = false)
 	private String state;
 
 	public EmsInstitute() {
+	}
+	
+	public EmsInstitute(EmsInstitutePK id) {
+		this.id = id;
 	}
 
 	public EmsInstitutePK getId() {

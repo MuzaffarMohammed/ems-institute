@@ -1,14 +1,12 @@
 package com.appseonit.ems.institute.pojo;
 
-import java.util.Date;
-
 public class Institute {
 
 	private Integer instituteId;
 	private String instituteName;
 	private String instituteCode;
-	private Date academicYearFrom;
-	private Date academicYearTo;
+	private String academicYearFrom;
+	private String academicYearTo;
 	private String city;
 	private String contactNo;
 	private String country;
@@ -23,8 +21,8 @@ public class Institute {
 	
 	public Institute() {}
 	
-	public Institute(Integer instituteId, String instituteName, String instituteCode, Date academicYearFrom,
-			Date academicYearTo, String city, String contactNo, String country, String fullAddress, String locality,
+	public Institute(Integer instituteId, String instituteName, String instituteCode, String academicYearFrom,
+			String academicYearTo, String city, String contactNo, String country, String fullAddress, String locality,
 			String mailId, String medium, String officePhoneNo, String pinCode, String recognisedBy, String state) {
 		this.instituteId = instituteId;
 		this.instituteName = instituteName;
@@ -62,16 +60,16 @@ public class Institute {
 	public void setInstituteCode(String instituteCode) {
 		this.instituteCode = instituteCode;
 	}
-	public Date getAcademicYearFrom() {
+	public String getAcademicYearFrom() {
 		return academicYearFrom;
 	}
-	public void setAcademicYearFrom(Date academicYearFrom) {
+	public void setAcademicYearFrom(String academicYearFrom) {
 		this.academicYearFrom = academicYearFrom;
 	}
-	public Date getAcademicYearTo() {
+	public String getAcademicYearTo() {
 		return academicYearTo;
 	}
-	public void setAcademicYearTo(Date academicYearTo) {
+	public void setAcademicYearTo(String academicYearTo) {
 		this.academicYearTo = academicYearTo;
 	}
 	public String getCity() {

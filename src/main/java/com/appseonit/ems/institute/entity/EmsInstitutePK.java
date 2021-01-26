@@ -12,16 +12,22 @@ public class EmsInstitutePK implements Serializable {
 	//default serial version id, required for serializable classes.
 	private static final long serialVersionUID = 1L;
 
-	@Column(name="CLIENT_ID")
-	private int instituteId;
+	@Column(name="CLIENT_ID", nullable = false)
+	private Integer instituteId;
 
-	@Column(name="CLIENT_NAME")
+	@Column(name="CLIENT_NAME", nullable = false)
 	private String instituteName;
 
-	@Column(name="CLIENT_CODE")
+	@Column(name="CLIENT_CODE", nullable = false)
 	private String instituteCode;
 
 	public EmsInstitutePK() {
+	}
+
+	public EmsInstitutePK(Integer instituteId, String instituteName, String instituteCode) {
+		this.instituteId = instituteId;
+		this.instituteName = instituteName;
+		this.instituteCode = instituteCode;
 	}
 
 	public int getInstituteId() {
