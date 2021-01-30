@@ -10,13 +10,26 @@ import java.util.Date;
  * 
  */
 @Entity
-@Table(name="ems_institute")
+@Table(name="ems_institute",
+uniqueConstraints={
+	    @UniqueConstraint(columnNames = {"INSTITUTE_NAME"})
+	})
 public class EmsInstitute implements Serializable {
+	
 	private static final long serialVersionUID = 1L;
+	
+	@Id
+	@Column(name="INSTITUTE_ID")
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	private Integer instituteId;
+	
+	
+	@Column(name="INSTITUTE_NAME", nullable = false)
+	private String instituteName;
 
-	@EmbeddedId
-	private EmsInstitutePK id;
-
+	@Column(name="INSTITUTE_CODE", nullable = false)
+	private String instituteCode;
+	
 	@Temporal(TemporalType.DATE)
 	@Column(name="ACADEMIC_YEAR_FROM", nullable = false)
 	private Date academicYearFrom;
@@ -61,18 +74,6 @@ public class EmsInstitute implements Serializable {
 	public EmsInstitute() {
 	}
 	
-	public EmsInstitute(EmsInstitutePK id) {
-		this.id = id;
-	}
-
-	public EmsInstitutePK getId() {
-		return this.id;
-	}
-
-	public void setId(EmsInstitutePK id) {
-		this.id = id;
-	}
-
 	public Date getAcademicYearFrom() {
 		return this.academicYearFrom;
 	}
@@ -175,6 +176,30 @@ public class EmsInstitute implements Serializable {
 
 	public void setState(String state) {
 		this.state = state;
+	}
+
+	public Integer getInstituteId() {
+		return instituteId;
+	}
+
+	public void setInstituteId(Integer instituteId) {
+		this.instituteId = instituteId;
+	}
+
+	public String getInstituteName() {
+		return instituteName;
+	}
+
+	public void setInstituteName(String instituteName) {
+		this.instituteName = instituteName;
+	}
+
+	public String getInstituteCode() {
+		return instituteCode;
+	}
+
+	public void setInstituteCode(String instituteCode) {
+		this.instituteCode = instituteCode;
 	}
 
 }

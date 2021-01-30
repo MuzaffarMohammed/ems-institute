@@ -1,4 +1,4 @@
-package com.appseonit.ems.institute.pojo;
+package com.appseonit.ems.institute.dto;
 
 import com.appseonit.ems.institute.util.Constants;
 
@@ -12,11 +12,11 @@ public class Response {
 	
 	public int code = Constants.ERROR_CODE;
 	public String respMsg;
-	public String response;
+	public Object response;
 	
 	public Response() {}
 	
-	public Response(int code, String respMsg, String response) {
+	public Response(int code, String respMsg, Object response) {
 		this.code = code;
 		this.respMsg = respMsg;
 		this.response = response;
@@ -34,10 +34,10 @@ public class Response {
 	public void setRespMsg(String respMsg) {
 		this.respMsg = respMsg;
 	}
-	public String getResponse() {
+	public Object getResponse() {
 		return response;
 	}
-	public void setResponse(String response) {
+	public void setResponse(Object response) {
 		this.response = response;
 	}
 }

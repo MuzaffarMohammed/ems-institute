@@ -1,12 +1,15 @@
 package com.appseonit.ems.institute.service;
 
-import com.appseonit.ems.institute.pojo.Institute;
-import com.appseonit.ems.institute.pojo.Response;
+import com.appseonit.ems.institute.dto.InstituteDTO;
+import com.appseonit.ems.institute.dto.Response;
 
 public interface InstituteService {
 
 
-	Institute getInstituteDetails(Integer userId);
+	InstituteDTO getInstituteDetails(Integer instituteId);
+	
+	InstituteDTO getInstituteDetails(String instituteName);
 
-	Response saveInstitute(Institute institute);
+	Response saveInstitute(InstituteDTO instituteDTO);
+	
 }

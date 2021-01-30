@@ -1,12 +1,22 @@
-package com.appseonit.ems.institute.pojo;
+package com.appseonit.ems.institute.dto;
 
-public class Institute {
+import java.util.Date;
+
+import com.appseonit.ems.institute.util.Constants;
+import com.fasterxml.jackson.annotation.JsonFormat;
+
+public class InstituteDTO {
 
 	private Integer instituteId;
 	private String instituteName;
 	private String instituteCode;
-	private String academicYearFrom;
-	private String academicYearTo;
+	
+	@JsonFormat(pattern = Constants.UI_DATE_FORMAT)
+	private Date academicYearFrom;
+	
+	@JsonFormat(pattern = Constants.UI_DATE_FORMAT)
+	private Date academicYearTo;
+	
 	private String city;
 	private String contactNo;
 	private String country;
@@ -19,10 +29,10 @@ public class Institute {
 	private String recognisedBy;
 	private String state;
 	
-	public Institute() {}
+	public InstituteDTO() {}
 	
-	public Institute(Integer instituteId, String instituteName, String instituteCode, String academicYearFrom,
-			String academicYearTo, String city, String contactNo, String country, String fullAddress, String locality,
+	public InstituteDTO(Integer instituteId, String instituteName, String instituteCode, Date academicYearFrom,
+			Date academicYearTo, String city, String contactNo, String country, String fullAddress, String locality,
 			String mailId, String medium, String officePhoneNo, String pinCode, String recognisedBy, String state) {
 		this.instituteId = instituteId;
 		this.instituteName = instituteName;
@@ -60,16 +70,16 @@ public class Institute {
 	public void setInstituteCode(String instituteCode) {
 		this.instituteCode = instituteCode;
 	}
-	public String getAcademicYearFrom() {
+	public Date getAcademicYearFrom() {
 		return academicYearFrom;
 	}
-	public void setAcademicYearFrom(String academicYearFrom) {
+	public void setAcademicYearFrom(Date academicYearFrom) {
 		this.academicYearFrom = academicYearFrom;
 	}
-	public String getAcademicYearTo() {
+	public Date getAcademicYearTo() {
 		return academicYearTo;
 	}
-	public void setAcademicYearTo(String academicYearTo) {
+	public void setAcademicYearTo(Date academicYearTo) {
 		this.academicYearTo = academicYearTo;
 	}
 	public String getCity() {

@@ -1,4 +1,4 @@
-package com.appseonit.ems.institute.pojo;
+package com.appseonit.ems.institute.dto;
 
 import java.lang.reflect.Field;
 

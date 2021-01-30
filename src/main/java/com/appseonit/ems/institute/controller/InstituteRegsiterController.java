@@ -16,18 +16,16 @@ import com.appseonit.ems.institute.service.InstituteService;
 
 
 @RestController
-@RequestMapping("/institute/details")
-public class InstituteController {
-	Logger log = LoggerFactory.getLogger(InstituteController.class);
+@RequestMapping("/institute/register")
+public class InstituteRegsiterController {
+	Logger log = LoggerFactory.getLogger(InstituteRegsiterController.class);
 
 	@Autowired
 	InstituteService service;
 	
-	@GetMapping("/{instituteId}")
-	public InstituteDTO getInstituteDetails(@PathVariable int instituteId) {
-		log.info("Inside getInstituteDetails...");
-		return service.getInstituteDetails(instituteId);
+	@PostMapping("/save")
+	public Response saveInstitute(@RequestBody InstituteDTO instituteDTO) {
+		return service.saveInstitute(instituteDTO);
 	}
 	
-
 }
